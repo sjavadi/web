@@ -1,0 +1,197 @@
+<!doctype html>
+<!--[if IE 8]> <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<title> SJavadi </title>
+<meta charset="utf-8">
+<meta name="viewport" id="view" content="width=device-width,maximum-scale=1" />
+<link rel="shortcut icon" href="core/images/favicon.ico" />
+<link rel="star-icon" href="core/images/RoyalBlue.png" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="core/styles/default/default.css" />
+<script src="core/js/libs/modernizr-2.0.6.min.js"></script>
+<script src="core/js/libs/jquery-1.6.2.min.js"></script>
+<script src="core/js/libs/jquery.easing.js"></script>
+<script src="core/js/libs/jquery.color.js"></script>
+<script src="core/js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="core/js/mylibs/layout.js"></script>
+<script src="core/js/libs/head.min.js"></script>
+<script src="core/js/libs/underscore-min.js"></script>
+<script src="core/js/libs/underscore.string.js"></script>
+<script src="core/js/mylibs/rising.js"></script>
+<script src="core/js/main.js"></script>
+<script src="core/js/mylibs/responsive.js"></script>
+</head>
+<body id="home">
+<div id="wrap">
+
+<!-- + -->
+
+<header role="banner">
+	<section id="site-logo"><a href="index.html"><img alt="SJavadi" src="core/images/logo.png" /></a></section>
+	<section id="nav-wrap">
+		<div class="bg"><span class="tip left"></span><span class="tip right"></span></div>
+		<a class="button home" href="index.html"><span></span></a>
+		<a class="button search"><span></span></a>
+		<form role="search" action="index.html" method="get">
+			<input type="text" name="s" value="Start Searching&hellip;" />
+			<span class="button close"></span>
+		</form>
+
+		<nav role="navigation">
+			<ul>
+				<li>
+					<a href="index.html">Home</a>
+					<ul>
+						
+						
+					</ul>
+				</li>
+				<li>
+					<a href="About.html">About me</a>
+					
+				</li>
+				<li>
+					<a href="construction.html">Photo Gallery</a>
+					<ul>
+						
+						<li class="menu-parent">
+							<a href="construction.html">Personal</a>
+							<ul>
+								<li><a href="construction.html">Travelling</a></li>
+								</ul>
+								<li><a href="construction.html">Miscellaneous</a></li>
+							</ul>
+						</li>
+                <li>
+					<a href="construction.html">Blog</a>
+					
+				</li>
+				
+				<li class="current-menu-item"><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</section><!-- navigation -->
+</header><!-- header -->
+
+<!-- + -->
+
+
+<div id="content" role="main">
+
+<hgroup id="page-title">
+	<h1>Contact</h1>
+	<h2>&hellip; Get in touch!</h2>
+</hgroup><!-- page-title -->
+
+<div id="content-wrap" class="clearfix">
+<div id="main" data-align="left">
+
+	<div class="post page">
+		<div class="content excerpt">
+			
+
+			<h3 class="section-heading">Leave me a Message</h3><hr class="sep" />
+
+<script type="text/javascript" src="core/js/libs/jquery.validate.pack.js"></script>
+<script type="text/javascript" src="core/js/libs/jquery.form.js"></script>
+<script>
+Rising.onLoad(function() {
+	var sending = false,
+		sent_message = false;
+
+	$('#contact-form').each(function() {
+		var _this = this;
+		this.data = {};
+		this.data.self = $(this);
+		this.data.fields = {};
+		this.data.labels = {};
+		this.data.notification = this.data.self.find('.notification');
+		_.each(['name','email','subject'], function(name) {
+			_this.data.fields[name] = _this.data.self.find(_.sprintf('input[name=%s]', name));
+			_this.data.labels[name] = _this.data.fields[name].val();
+		});
+	}).validate({
+		errorPlacement: function() {},
+		highlight: function(element) { $(element).addClass('invalid'); },
+		unhighlight: function(element) { $(element).removeClass('invalid'); },
+		submitHandler: function(form) {
+
+			if (sending) return false;
+			if ( sent_message ) { alert('Your message is on the way, Thanks!'); return false; }
+
+			var field, valid = true;
+			with (form.data) {
+				_.each(fields, function(field, name) {
+					if ( $.trim(field.val()) == labels[name] ) { valid = false; field.addClass('invalid'); } else { field.removeClass('invalid'); }
+				});
+			}
+
+			if (valid) {
+				sending = true;
+				form.data.self.ajaxSubmit({
+					error: function() {
+						form.data.notification.find('span:first-child').html('Unable to send message (Unknown server error)');
+						form.data.notification.fadeIn(500);
+					},
+					success: function(res) {
+						sending = false;
+						if (/*res == 'success'*/ true) {
+							sent_message = true;
+							form.data.notification.find('span:first-child').html('Your message has been sent!');
+							form.data.notification.fadeIn(500);
+						} else {
+							form.data.notification.find('span:first-child').html('Unable to send message (Unknown server error)');
+							form.data.notification.fadeIn(500);
+						}
+
+					}
+				});
+			}
+			return false;
+		}
+
+	});
+});
+</script>
+
+			<form class="special validate" action="contact.html" method="post" id="contact-form">
+				<p><input type="text" id="name" name="name" value="Name" class="required" /><label for="name">Required</label></p>
+				<p><input type="text" id="email" name="email" value="Email" class="required email" /><label for="email">Required</label></p>
+				<p><input type="text" id="subject" name="subject" value="Subject" class="required" /><label for="subject">Required</label></p>
+				<p><textarea name="message" class="required"></textarea></p>
+				<p class="notification" style="display: none;"><span></span> <span class="close" data-action="dismiss"></span></p>
+				<p><input type="submit" value="Send Message" /></p>
+			</form><!-- commentform -->
+
+		</div><!-- .content -->
+	</div><!-- .post -->
+
+</div><!-- main -->
+
+
+
+	
+			
+				
+
+
+</footer><!-- footer -->
+
+</div><!-- wrap -->
+
+<script>
+Rising.theme = 'default';
+Rising.colors = {
+	postTitleHover: '#EB5426',
+	footerLinkHover: '#FF973F',
+	frameHover: '#EA7716',
+	lightboxBg: '#F7F7F7',
+	sourceCodeBg: '#FCFCFC'
+};
+</script>
+
+<!-- Analytics -->
+</body>
+</html>
+<!-- Localized -->
