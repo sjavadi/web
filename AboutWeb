@@ -1,0 +1,109 @@
+<!doctype html>
+<!--[if IE 8]> <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<title> SJavadi</title>
+<meta charset="utf-8">
+<meta name="viewport" id="view" content="width=device-width,maximum-scale=1" />
+<link rel="shortcut icon" href="core/images/favicon.ico" />
+<link rel="star-icon" href="core/images/RoyalBlue.png" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="core/styles/default/default.css" />
+<script src="https://sjavadi.info/core/js/libs/modernizr-2.0.6.min.js"></script>
+<script src="https://sjavadi.info/core/js/libs/jquery-1.6.2.min.js"></script>
+<script src="https://sjavadi.info/core/js/libs/jquery.easing.js"></script>
+<script src="https://sjavadi.info/core/js/libs/jquery.color.js"></script>
+<script src="https://sjavadi.info/core/js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://sjavadi.info/core/js/mylibs/layout.js"></script>
+<script src="https://sjavadi.info/core/js/libs/head.min.js"></script>
+<script src="https://sjavadi.info/core/js/libs/underscore-min.js"></script>
+<script src="https://sjavadi.info/core/js/libs/underscore.string.js"></script>
+<script src="https://sjavadi.info/core/js/mylibs/rising.js"></script>
+<script src="https://sjavadi.info/core/js/main.js"></script>
+<script src="https://sjavadi.info/core/js/mylibs/responsive.js"></script>
+</head>
+<body id="home">
+<div id="wrap">
+
+<!-- + -->
+
+<header role="banner">
+	<section id="site-logo"><a href="https://sjavadi.info"><img alt="SJavadi" src="https://sjavadi.info/core/images/logo.png" /></a></section>
+	<section id="nav-wrap">
+		<div class="bg"><span class="tip left"></span><span class="tip right"></span></div>
+		<a class="button home" href="https://sjavadi.info"><span></span></a>
+		<a class="button search"><span></span></a>
+		<form role="search" action="https://sjavadi.info" method="get">
+			<input type="text" name="s" value="Start Searching&hellip;" />
+			<span class="button close"></span>
+		</form>
+
+		<nav role="navigation">
+		    <ul>
+				<li>
+					<a href="https://sjavadi.info">Home</a>
+					<ul>
+			
+					</ul>
+				</li>
+				
+					<li class="current-menu-item"><a href="https://sjavadi.info/About">About</a>
+					
+				</li>
+                <li>
+					<a href="https://sjavadi.info/Research">Research</a>
+                </li>
+				<li>
+					<a href="https://sjavadi.info/Photo">Photo Gallery</a>
+					
+				</li>
+				<li>
+					<a href="https://sjavadi.info/Blog">Blog</a>
+					
+				</li>
+				
+				
+			</ul>
+		</nav>
+	</section><!-- navigation -->
+</header><!-- header -->
+
+<!-- + -->
+
+
+
+	<section  style="color:#fff;font-family: Georgia,serif; font-style: italic; font-size: 125.30%;">
+		<p>In this website, I mostly intend to write about my diverse experiences. My choice of event is based on a simple philosophy; knowledge and experience sharing.
+    I can only tell you about my experiences that are mixture of failures and success, and the way I dealt with them. If you happen to walk into a similar situation, you know that someone out there had to do the same and her story is shared on this webpage :)   </p>
+       
+        
+    
+
+ </div>
+
+
+	
+
+	
+			
+
+							</div><!-- .scroller -->
+	
+
+</div><!-- wrap -->
+
+<script>
+Rising.theme = 'default';
+Rising.colors = {
+	postTitleHover: '#EB5426',
+	footerLinkHover: '#FF973F',
+	frameHover: '#EA7716',
+	lightboxBg: '#F7F7F7',
+	sourceCodeBg: '#FCFCFC'
+};
+</script>
+
+<!-- Analytics -->
+</body>
+</html>
+<!-- Localized -->
